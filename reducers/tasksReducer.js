@@ -8,6 +8,7 @@ export const TASKS_ACTION_TYPES = {
   FETCH_SUCCESS: "FETCH_SUCCESS",
   FETCH_ERROR: "FETCH_ERROR",
   ADD_NEW_TASK: "ADD_NEW_TASK",
+  DELETE_TASK: "DELETE_TASK",
 };
 
 export const tasksReducer = (state, action) => {
@@ -29,6 +30,14 @@ export const tasksReducer = (state, action) => {
 
     // Actions for Adding a new Task
     case "ADD_NEW_TASK":
+      return {
+        ...state,
+        loading: false,
+        tasks: action.payload,
+      };
+
+    // Action to delete a Task
+    case "DELETE_TASK":
       return {
         ...state,
         loading: false,

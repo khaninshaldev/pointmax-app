@@ -1,7 +1,6 @@
 import TasksContext from "../contexts/TasksContext";
 import UserContext from "../contexts/UserContext";
-import Layout from "../layout/Layout";
-import Navbar from "../layout/Navbar";
+import Layout from "../layouts/Layout";
 import "../styles/globals.scss";
 
 function MyApp({ Component, pageProps }) {

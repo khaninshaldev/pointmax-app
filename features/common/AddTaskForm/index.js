@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { useTasks } from "../../../contexts/TasksContext";
-import { SyncLoader } from "react-spinners";
+import { PropagateLoader } from "react-spinners";
 
 import styles from "./AddTaskForm.module.scss";
 
@@ -28,7 +28,9 @@ const AddTaskForm = () => {
   return (
     <section className={styles.addTask_section}>
       {loading ? (
-        <SyncLoader size="6" color="white" />
+        <section className={styles.addTask_loading_section}>
+          <PropagateLoader size="6" color="white" />
+        </section>
       ) : (
         <form
           onSubmit={handleAddTask}

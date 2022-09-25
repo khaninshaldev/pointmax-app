@@ -9,6 +9,8 @@
   gap: 0.8rem;
   padding: 0.8rem;
 
+  position: relative;
+
   .task_complete_circle {
     margin-left: 0.8rem;
   }
@@ -17,7 +19,6 @@
     margin-left: 0.4rem;
   }
 
-  .task_button_edit,
   .task_button_menu {
     @include mixins.flex(row, center, center, 0);
 
@@ -27,6 +28,7 @@
     font-size: 1.6rem;
     padding: 0.8rem;
     transition: all ease-out 150ms;
+    margin-left: auto;
 
     &:hover {
       background-color: var(--dark-600);
@@ -36,9 +38,9 @@
     &:active {
       background-color: var(--dark-500);
     }
-  }
-
-  .task_button_edit {
-    margin-left: auto;
+    &:focus {
+      outline: 0;
+      background-color: var(--dark-500);
+    }
   }
 }

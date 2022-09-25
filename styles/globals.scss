@@ -73,7 +73,8 @@ button {
   }
 
   &:focus {
-    outline: 2px solid var(--outline);
+    outline: 0;
+    background-color: var(--light-500);
   }
 }
 

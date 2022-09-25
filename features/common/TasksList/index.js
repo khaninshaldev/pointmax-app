@@ -3,17 +3,19 @@ import AddTaskForm from "../AddTaskForm";
 import Task from "../Task";
 import styles from "./TasksList.module.scss";
 import { useTasks } from "../../../contexts/TasksContext";
+import { HashLoader } from "react-spinners";
 
-const TasksList = ({ listId }) => {
-  const { setListId, loading, error, tasks } = useTasks();
+const TasksList = () => {
+  const { loading, error, tasks } = useTasks();
 
-  useEffect(() => {
-    setListId(listId);
-  }, [listId, setListId]);
   return (
     <>
       {loading ? (
-        "Loading..."
+        <section className={styles.tasks_loading_section}>
+          <section className={styles.tasks_loading}>
+            <HashLoader size={64} color="#ffffff" />
+          </section>
+        </section>
       ) : (
         <>
           <section className={styles.tasks_top_section}>
@@ -28,12 +30,12 @@ const TasksList = ({ listId }) => {
             ) : (
               <>
                 {tasks?.map((task) => {
-                  return <Task key={task.id} title={task.title} />;
+                  return <Task key={task.id} id={task.id} title={task.title} />;
                 })}
               </>
             )}
 
-            <AddTaskForm listId={listId} />
+            <AddTaskForm />
           </section>
         </>
       )}

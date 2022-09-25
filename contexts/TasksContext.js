@@ -15,12 +15,16 @@ import {
 import {
   addDoc,
   collection,
+  deleteDoc,
+  doc,
   getDocs,
   query,
   serverTimestamp,
   where,
 } from "firebase/firestore";
 import { db } from "../firebase/config";
+import { useRouter } from "next/router";
+import { useUser } from "./UserContext";
 
 export const TasksCtx = createContext();
 
@@ -29,7 +33,19 @@ export const useTasks = () => useContext(TasksCtx);
 const TasksContext = ({ children }) => {
   const tasksCollection = collection(db, "tasks");
 
+  const { user } = useUser();
+
+  const router = useRouter();
+  const path = router.pathname;
   const [listId, setListId] = useState(null);
+
+  useMemo(() => {
+    if (user) {
+      if (path === "/home") {
+        setListId(`default_daily_${user.uid}`);
+      }
+    }
+  }, [path, user]);
 
   const [state, dispatch] = useReducer(tasksReducer, INITIAL_TASKS_STATE);
   const { loading, error, tasks } = state;
@@ -49,6 +65,16 @@ const TasksContext = ({ children }) => {
         payload: [...tasks, { id: task.id, ...taskData }],
       })
     );
+  };
+
+  const deleteTask = async (id) => {
+    const taskArray = tasks.filter((task) => {
+      return task.id !== id;
+    });
+
+    dispatch({ type: TASKS_ACTION_TYPES.DELETE_TASK, payload: taskArray });
+
+    await deleteDoc(doc(db, "tasks", id));
   };
 
   useMemo(() => {
@@ -78,7 +104,7 @@ const TasksContext = ({ children }) => {
   }, [listId]);
 
   return (
-    <TasksCtx.Provider value={{ setListId, loading, error, tasks, addTask }}>
+    <TasksCtx.Provider value={{ loading, error, tasks, addTask, deleteTask }}>
       {children}
     </TasksCtx.Provider>
   );

@@ -2,6 +2,14 @@
 .addTask_section {
   margin-top: 1.2rem;
 
+  .addTask_loading_section {
+    background-color: var(--dark-800);
+    border-radius: 4px;
+    @include mixins.flex(row, center, center, 0);
+    width: 100%;
+    padding: 2.4rem;
+  }
+
   .addTask_form {
     display: flex;
     width: 100%;

@@ -1,0 +1,22 @@
+.dropdown_section {
+  position: absolute;
+  right: 0;
+  bottom: 90%;
+  z-index: 100;
+
+  .dropdown_list {
+    background-color: var(--dark-600);
+    border-radius: 4px;
+
+    .dropdown_edit_button,
+    .dropdown_delete_button {
+      background-color: var(--dark-600);
+      color: var(--light-400);
+      font-size: 1.2rem;
+      justify-content: flex-start;
+      margin-top: 2px;
+      padding: 1rem 2rem;
+      width: 100%;
+    }
+  }
+}

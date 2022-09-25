@@ -1,0 +1,17 @@
+@use "../../styles/utilities/mixins" as mixins;
+
+.layout_div {
+  min-height: 100vh;
+  display: flex;
+  @include mixins.flex(column, space-between, center, 0);
+
+  margin: auto;
+
+  .layout_section {
+    margin: auto;
+    margin-top: 3.2rem;
+    flex-grow: 2;
+    @include mixins.flex(row, center, center, 0);
+    width: 90%;
+  }
+}

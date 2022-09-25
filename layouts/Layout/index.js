@@ -6,8 +6,11 @@ import styles from "./Layout.module.scss";
 const Layout = ({ children }) => {
   return (
     <>
-      <Navbar />
-      <div className={styles.layout}>{children}</div>
+      <div className={styles.layout_div}>
+        <Navbar />
+
+        <section className={styles.layout_section}>{children}</section>
+      </div>
     </>
   );
 };
