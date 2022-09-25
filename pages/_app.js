@@ -1,7 +1,19 @@
-import '../styles/globals.css'
+import TasksContext from "../contexts/TasksContext";
+import UserContext from "../contexts/UserContext";
+import Layout from "../layout/Layout";
+import Navbar from "../layout/Navbar";
+import "../styles/globals.scss";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <UserContext>
+      <TasksContext>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </TasksContext>
+    </UserContext>
+  );
 }
 
-export default MyApp
+export default MyApp;

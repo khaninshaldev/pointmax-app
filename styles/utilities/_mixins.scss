@@ -1,0 +1,14 @@
+// Flexbox
+@mixin flex($direction, $justify, $align, $gap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align: $align;
+  gap: $gap;
+}
+
+// Margin for X-Axis
+@mixin mx($left, $right) {
+  margin-left: $left;
+  margin-right: $right;
+}

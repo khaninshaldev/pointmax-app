@@ -1,0 +1,44 @@
+@use "../../../styles/utilities/_mixins.scss" as mixins;
+
+.task {
+  background-color: var(--dark-700);
+  border-radius: 4px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem;
+
+  .task_complete_circle {
+    margin-left: 0.8rem;
+  }
+
+  .task_title {
+    margin-left: 0.4rem;
+  }
+
+  .task_button_edit,
+  .task_button_menu {
+    @include mixins.flex(row, center, center, 0);
+
+    background-color: var(--dark-600);
+    border: 2px solid transparent;
+    color: var(--light-100);
+    font-size: 1.6rem;
+    padding: 0.8rem;
+    transition: all ease-out 150ms;
+
+    &:hover {
+      background-color: var(--dark-600);
+      border-color: var(--dark-500);
+    }
+
+    &:active {
+      background-color: var(--dark-500);
+    }
+  }
+
+  .task_button_edit {
+    margin-left: auto;
+  }
+}
