@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import AddTaskForm from "../AddTaskForm";
-import Task from "../Task";
+import React from "react";
+import AddTaskForm from "./AddTaskForm";
+import Task from "./Task";
 import styles from "./TasksList.module.scss";
 import { useTasks } from "../../../contexts/TasksContext";
 import { HashLoader } from "react-spinners";
@@ -17,9 +17,9 @@ const TasksList = () => {
           </section>
         </section>
       ) : (
-        <>
+        <section className={styles.tasks_section_wrapper}>
           <section className={styles.tasks_top_section}>
-            <h1 className={styles.tasks_heading}>Tasks</h1>
+            <h2 className={styles.tasks_heading}>Tasks</h2>
           </section>
 
           <section className={styles.tasks_section}>
@@ -37,7 +37,7 @@ const TasksList = () => {
 
             <AddTaskForm />
           </section>
-        </>
+        </section>
       )}
     </>
   );

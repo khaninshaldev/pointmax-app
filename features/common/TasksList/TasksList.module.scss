@@ -12,15 +12,19 @@
   }
 }
 
-.tasks_top_section {
-  @include mixins.flex(row, flex-start, space-between, 0);
-  margin-bottom: 1.6rem;
-}
+.tasks_section_wrapper {
+  margin-bottom: auto;
 
-.tasks_section {
-  @include mixins.flex(column, center, stretch, 1.2rem);
+  .tasks_top_section {
+    @include mixins.flex(row, flex-start, space-between, 0);
+    margin-bottom: 1.6rem;
+  }
 
-  .tasks_empty_text {
-    font-size: 1.6rem;
+  .tasks_section {
+    @include mixins.flex(column, center, stretch, 1.2rem);
+
+    .tasks_empty_text {
+      font-size: 2rem;
+    }
   }
 }

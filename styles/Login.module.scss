@@ -13,3 +13,27 @@
     margin-bottom: 2.4rem;
   }
 }
+
+// Slim screensize e.g. Galaxy Fold screen
+@media screen and (max-device-width: 360px) {
+  .login_section {
+    .login_heading {
+      font-size: 2.1rem;
+    }
+    .login_paragraph {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+// Mobile screensize
+@media screen and (max-device-width: 600px) {
+  .login_section {
+    .login_heading {
+      font-size: 2.3rem;
+    }
+    .login_paragraph {
+      font-size: 1.5rem;
+    }
+  }
+}

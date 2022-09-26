@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { HashLoader } from "react-spinners";
+import { BsCardText, BsFillEnvelopeFill, BsFillLockFill } from "react-icons/bs";
 
 import styles from "./AuthForm.module.scss";
 
@@ -19,22 +20,46 @@ const AuthForm = ({
     <>
       <form className={styles.auth_form} onSubmit={authFunction}>
         {nameRef ? (
-          <input ref={nameRef} type="text" placeholder="Name" required />
+          <section className={styles.auth_input_wrapper}>
+            <div className={styles.auth_icon_div}>
+              <BsCardText />
+            </div>
+            <input
+              className={styles.auth_input}
+              ref={nameRef}
+              type="text"
+              placeholder="Name"
+              required
+            />
+          </section>
         ) : (
           ""
         )}
-        <input
-          ref={emailRef}
-          type="email"
-          placeholder="E-mail Address"
-          required
-        />
-        <input
-          ref={passwordRef}
-          type="password"
-          placeholder="Password"
-          required
-        />
+        <section className={styles.auth_input_wrapper}>
+          <div className={styles.auth_icon_div}>
+            <BsFillEnvelopeFill />
+          </div>
+
+          <input
+            className={styles.auth_input}
+            ref={emailRef}
+            type="email"
+            placeholder="E-mail Address"
+            required
+          />
+        </section>
+        <section className={styles.auth_input_wrapper}>
+          <div className={styles.auth_icon_div}>
+            <BsFillLockFill />
+          </div>
+          <input
+            className={styles.auth_input}
+            ref={passwordRef}
+            type="password"
+            placeholder="Password"
+            required
+          />
+        </section>
 
         {error && error != "" ? (
           <p className={styles.auth_error}>{error.message}</p>

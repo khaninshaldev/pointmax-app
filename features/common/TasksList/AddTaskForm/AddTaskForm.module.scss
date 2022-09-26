@@ -1,4 +1,4 @@
-@use "../../../styles/utilities/_mixins.scss" as mixins;
+@use "../../../../styles/utilities/_mixins.scss" as mixins;
 .addTask_section {
   margin-top: 1.2rem;
 
@@ -18,6 +18,7 @@
       border-bottom-left-radius: 4px;
       width: 100%;
       border: 0;
+      transition: none;
 
       &::placeholder {
         font-size: 1.4rem;
@@ -30,8 +31,9 @@
     }
 
     .addTask_button {
-      background-color: var(--dark-600);
+      background-color: var(--dark-700);
       color: var(--light-100);
+      border: 0;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
       padding: 1rem;

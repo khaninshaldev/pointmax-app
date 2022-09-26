@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { BsArrowRightCircle } from "react-icons/bs";
-import { useTasks } from "../../../contexts/TasksContext";
+import { useTasks } from "../../../../contexts/TasksContext";
 import { PropagateLoader } from "react-spinners";
 
 import styles from "./AddTaskForm.module.scss";
@@ -41,6 +41,7 @@ const AddTaskForm = () => {
             ref={titleRef}
             className={styles.addTask_input}
             placeholder="Click here to add a task"
+            required
           />
 
           {inputFocus ? (

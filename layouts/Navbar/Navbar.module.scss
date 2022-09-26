@@ -1,20 +1,97 @@
+@use "../../styles/utilities/mixins" as mixins;
 .header {
   background-color: var(--dark-900);
   border-bottom: 1px solid var(--dark-700);
   padding: 1.2rem;
-  position: sticky;
-  top: 0;
   width: 100%;
   z-index: 99;
+
+  .nav {
+    @include mixins.flex(row, space-between, center, 0);
+    padding-left: 1.2rem;
+
+    .nav_list {
+      @include mixins.flex(row, center, center, 2.4rem);
+
+      .nav_link {
+        @include mixins.flex(row, center, center, 1.2rem);
+        border: 2px solid transparent;
+        border-radius: 4px;
+        cursor: pointer;
+        padding: 1rem;
+        transition: all ease-out 150ms;
+
+        &:hover {
+          background-color: var(--dark-700);
+        }
+
+        &:active {
+          border: 2px solid var(--dark-500);
+        }
+
+        &:focus {
+          border: 2px solid var(--dark-900);
+          outline: 2px solid var(--accent-300);
+        }
+      }
+    }
+
+    .user_username {
+      margin-left: auto;
+    }
+  }
 }
 
-.nav {
-  display: flex;
-  align-items: center;
-  gap: 2.4rem;
-  padding-left: 1.2rem;
+@media screen and (max-device-width: 640px) {
+  .header {
+    background-color: var(--dark-800);
+    border: 0;
+    border-top: 1px solid var(--dark-600);
+    position: fixed;
+    padding: 0.8rem;
+    bottom: 0;
+
+    .nav {
+      .nav_brand {
+        display: none;
+      }
+
+      .nav_list {
+        flex-grow: 2;
+        justify-content: space-evenly;
+
+        .nav_link {
+          font-size: 2rem;
+
+          .signOut {
+            @include mixins.flex(row, center, center, 0);
+            background-color: transparent !important;
+            border: 0 !important;
+            padding: 0 !important;
+            font-size: 2.4rem;
+            outline: 0 !important;
+
+            .signOut_icon {
+              display: none;
+            }
+
+            .signOut_text {
+              display: none;
+            }
+          }
+
+          .nav_link_text {
+            display: none;
+          }
+        }
+      }
+    }
+  }
 }
 
-.user_username {
-  margin-left: auto;
+@media screen and (min-device-width: 641px) {
+  .header {
+    position: sticky;
+    top: 0;
+  }
 }

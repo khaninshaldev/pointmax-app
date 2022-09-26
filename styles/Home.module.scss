@@ -1,4 +1,6 @@
+@use "./utilities/mixins" as mixins;
 .tasks_container {
+  @include mixins.flex(column, center, stretch, 4.8rem);
   flex-grow: 2;
   width: 100%;
 }
