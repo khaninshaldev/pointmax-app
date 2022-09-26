@@ -76,6 +76,16 @@ button {
     outline: 0;
     background-color: var(--light-500);
   }
+
+  &.ghost-btn {
+    background-color: var(--dark-900);
+    border: 1px solid var(--dark-500);
+    color: var(--light-200);
+
+    &:hover {
+      background-color: var(--dark-500);
+    }
+  }
 }
 
 input {

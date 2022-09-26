@@ -10,6 +10,7 @@ const Navbar = () => {
   const { user } = useUser();
   const router = useRouter();
   const path = router.pathname;
+  console.log(user);
 
   const handleSignOut = async () => {
     await signOut(auth).then(() => router.push("/"));
@@ -17,14 +18,16 @@ const Navbar = () => {
 
   return (
     <>
-      {path === "/" ? (
+      {path === "/" || path === "/signUp" ? (
         ""
       ) : (
         <header className={styles.header}>
           <nav className={styles.nav}>
             <h2>Pointmax</h2>
 
-            <p className={styles.user_username}>Logged in as {user?.email}</p>
+            <p className={styles.user_username}>
+              {user ? `Logged in as ${user.displayName}` : ""}
+            </p>
             <button onClick={handleSignOut}>Sign Out</button>
           </nav>
         </header>

@@ -1,4 +1,5 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState, useRef } from "react";
 import { auth } from "../../../firebase/config";
@@ -45,6 +46,12 @@ const LoginForm = () => {
         <button className={styles.login_button} type="submit">
           {loading ? "Loading..." : "Log In"}
         </button>
+
+        <hr className={styles.login_divider} />
+
+        <Link href="/signUp">
+          <button className="ghost-btn">Create an account</button>
+        </Link>
       </form>
     </>
   );

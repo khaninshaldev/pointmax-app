@@ -1,4 +1,4 @@
-.login_form {
+.signup_form {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -6,11 +6,6 @@
   width: 100%;
 }
 
-.login_button {
+.signup_button {
   margin-top: 1.6rem;
-}
-
-.login_divider {
-  border-color: var(--dark-600);
-  margin: 1rem 0;
 }
