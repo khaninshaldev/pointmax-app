@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+
 /******************************
     RESETTING DEFAULT STYLES
 *******************************/
@@ -21,6 +23,17 @@
   --light-300: rgb(209, 209, 214);
   --light-400: rgb(199, 199, 204);
   --light-500: rgb(174, 174, 178);
+  --accent-100: #c6f6d5;
+  --accent-200: #9ae6b4;
+  --accent-300: #68d391;
+  --accent-400: #48bb78;
+  --accent-500: #38a169;
+  --accent-600: #2f855a;
+  --error-red: #e53e3e;
+  --font-family-body: "DM Sans", sans-serif;
+  --font-weight-body: 400;
+  --font-family-heading: "DM Sans", sans-serif;
+  --font-weight-heading: 700;
 
   --outline: var(--dark-500);
 }
@@ -47,6 +60,21 @@ input {
 /******************
     THEME STYLES
 *******************/
+html {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-heading);
+}
+
 body {
   background-color: var(--dark-900);
   color: var(--light-100);
@@ -55,35 +83,36 @@ body {
 }
 
 button {
-  background-color: var(--light-100);
-  border: 0;
+  background-color: var(--accent-600);
+  border: 2px solid var(--dark-900);
+  color: var(--light-100);
   border-radius: 4px;
-  color: var(--dark-900);
   cursor: pointer;
   font-weight: 700;
   padding: 1.2rem 2.4rem;
   transition: all ease-out 250ms;
+  outline: 2px solid transparent;
 
   &:hover {
-    background-color: var(--light-300);
+    background-color: var(--accent-500);
   }
 
   &:active {
-    background-color: var(--light-500);
+    background-color: var(--accent-300);
   }
 
   &:focus {
-    outline: 0;
-    background-color: var(--light-500);
+    outline: 2px solid var(--accent-200);
   }
 
   &.ghost-btn {
     background-color: var(--dark-900);
     border: 1px solid var(--dark-500);
-    color: var(--light-200);
+    color: var(--light-300);
 
     &:hover {
-      background-color: var(--dark-500);
+      background-color: var(--light-300);
+      color: var(--dark-900);
     }
   }
 }
@@ -108,5 +137,9 @@ input {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     outline: 0;
+  }
+
+  &::placeholder {
+    font-size: 1.4rem;
   }
 }

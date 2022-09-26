@@ -1,14 +1,15 @@
 .login_section {
-  border: 1px solid var(--dark-600);
-  border-radius: 4px;
-  max-width: 340px;
+  max-width: 384px;
   margin: auto;
-  padding: 3rem;
   width: 100%;
+  text-align: center;
 
   .login_heading {
     font-size: 2.8rem;
-    margin-bottom: 1.6rem;
-    text-align: center;
+    margin-bottom: 0.8rem;
+  }
+  .login_paragraph {
+    color: var(--light-500);
+    margin-bottom: 2.4rem;
   }
 }

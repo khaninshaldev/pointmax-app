@@ -1,0 +1,23 @@
+@use "../../../styles/utilities/mixins" as mixins;
+
+.auth_form {
+  @include mixins.flex(column, center, center, 0.8rem);
+
+  .auth_error {
+    background-color: var(--error-red);
+    border-radius: 4px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 1.2rem;
+  }
+
+  .auth_button {
+    @include mixins.flex(row, center, center, 0);
+    margin-top: 1.6rem;
+  }
+
+  .auth_divider {
+    border-color: var(--dark-600);
+    margin: 1rem 0;
+  }
+}
