@@ -11,7 +11,6 @@ const Navbar = () => {
   const { user } = useUser();
   const router = useRouter();
   const path = router.pathname;
-  console.log(user);
 
   return (
     <>

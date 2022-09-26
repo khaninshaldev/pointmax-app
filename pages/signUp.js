@@ -31,6 +31,7 @@ const SignUp = () => {
       async (userCred) => {
         await updateProfile(userCred.user, { displayName: name });
         await setDoc(doc(db, "lists", `default_daily_${userCred.user.uid}`), {
+          name: "Daily tasks",
           userUID: userCred.user.uid,
         });
       }
