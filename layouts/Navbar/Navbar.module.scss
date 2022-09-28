@@ -42,7 +42,7 @@
   }
 }
 
-@media screen and (max-device-width: 640px) {
+@media screen and (max-width: 640px) {
   .header {
     background-color: var(--dark-800);
     border: 0;
@@ -89,7 +89,7 @@
   }
 }
 
-@media screen and (min-device-width: 641px) {
+@media screen and (min-width: 641px) {
   .header {
     position: sticky;
     top: 0;

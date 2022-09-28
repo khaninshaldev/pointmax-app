@@ -1,0 +1,47 @@
+@use "../../../styles/utilities/_mixins.scss" as mixins;
+
+.lists {
+  @include mixins.flex(column, flex-start, stretch, 1.2rem);
+  align-self: stretch;
+  margin-bottom: auto;
+
+  .lists_top_section {
+    @include mixins.flex(row, space-between, center, 0);
+    h1 {
+      font-size: 2.4rem;
+    }
+  }
+
+  .list_item {
+    background-color: var(--dark-800);
+    border: 2px solid var(--dark-700);
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 2.4rem;
+    transition: background-color 250ms ease;
+
+    & h3 {
+      font-size: 1.8rem;
+    }
+
+    &:hover {
+      background-color: var(--dark-700);
+      border-color: var(--dark-600);
+    }
+    &:active {
+      background-color: var(--dark-600);
+    }
+  }
+}
+
+.lists_loading_section {
+  @include mixins.flex(row, center, flex-start, 0);
+  min-height: 100%;
+  position: relative;
+
+  .lists_loading {
+    margin: auto;
+    position: relative;
+    bottom: 3.2rem;
+  }
+}

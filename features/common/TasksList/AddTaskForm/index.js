@@ -44,13 +44,9 @@ const AddTaskForm = () => {
             required
           />
 
-          {inputFocus ? (
-            <button type="submit" className={styles.addTask_button}>
-              <BsArrowRightCircle />
-            </button>
-          ) : (
-            ""
-          )}
+          <button type="submit" className={styles.addTask_button}>
+            <BsArrowRightCircle />
+          </button>
         </form>
       )}
     </section>

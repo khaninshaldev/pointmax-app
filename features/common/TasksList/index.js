@@ -5,7 +5,7 @@ import styles from "./TasksList.module.scss";
 import { useTasks } from "../../../contexts/TasksContext";
 import { HashLoader } from "react-spinners";
 
-const TasksList = () => {
+const TasksList = ({ list_heading }) => {
   const { loading, error, tasks } = useTasks();
 
   return (
@@ -19,7 +19,9 @@ const TasksList = () => {
       ) : (
         <section className={styles.tasks_section_wrapper}>
           <section className={styles.tasks_top_section}>
-            <h2 className={styles.tasks_heading}>Tasks</h2>
+            <h2 className={styles.tasks_heading}>
+              {list_heading ? list_heading : "Daily tasks"}
+            </h2>
           </section>
 
           <section className={styles.tasks_section}>
@@ -30,7 +32,14 @@ const TasksList = () => {
             ) : (
               <>
                 {tasks?.map((task) => {
-                  return <Task key={task.id} id={task.id} title={task.title} />;
+                  return (
+                    <Task
+                      key={task.id}
+                      id={task.id}
+                      title={task.title}
+                      isComplete={task.isComplete}
+                    />
+                  );
                 })}
               </>
             )}

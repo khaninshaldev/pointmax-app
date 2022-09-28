@@ -1,0 +1,32 @@
+@use "../../../styles/utilities/mixins.scss" as mixins;
+
+.settings_form {
+  @include mixins.flex(column, flex-start, stretch, 1.6rem);
+  border: 1px solid var(--dark-700);
+  border-radius: 8px;
+  margin-bottom: 2.4rem;
+  padding: 3.2rem 3.2rem;
+
+  .settings_account_section {
+    @include mixins.flex(row, space-between, center, 0);
+    margin-bottom: 1.6rem;
+
+    h1 {
+      font-size: 2.4rem;
+    }
+
+    .settings_edit_button {
+      padding: 0.6rem 1.8rem;
+    }
+  }
+
+  label {
+    @include mixins.flex(column, flex-start, stretch, 0.4rem);
+    color: var(--dark-400);
+    font-weight: bold;
+  }
+
+  .settings_save_button {
+    margin-top: 1.2rem;
+  }
+}

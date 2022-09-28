@@ -15,10 +15,11 @@
     width: 100%;
 
     .addTask_input {
-      border-bottom-left-radius: 4px;
       width: 100%;
       border: 0;
-      transition: none;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 4px;
 
       &::placeholder {
         font-size: 1.4rem;
@@ -36,8 +37,8 @@
       border: 0;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
-      padding: 1rem;
-      font-size: 2rem;
+      padding: 1rem 1.6rem;
+      font-size: 1.6rem;
       @include mixins.flex(row, center, center, 0);
     }
   }

@@ -15,7 +15,7 @@
 }
 
 // Slim screensize e.g. Galaxy Fold screen
-@media screen and (max-device-width: 360px) {
+@media screen and (max-width: 360px) {
   .signup_section {
     .signup_heading {
       font-size: 2.1rem;
@@ -27,7 +27,7 @@
 }
 
 // Mobile screensize
-@media screen and (max-device-width: 600px) {
+@media screen and (max-width: 600px) {
   .signup_section {
     .signup_heading {
       font-size: 2.3rem;
